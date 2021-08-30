@@ -5,7 +5,7 @@ loader.style.display = 'none'
 
 const loadWeather = () => {
     if(input.value.length == 0){
-        alert('dip vhai kisdu likhen')
+        alert('You have to search by city name!!!')
     }
     else if(input.value.length > 0){
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=ef76b89369ed75505fa4bb3a995f48a0`
