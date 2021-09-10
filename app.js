@@ -8,7 +8,7 @@ const loadWeather = () => {
         alert('You have to search by city name!!!')
     }
     else if(input.value.length > 0){
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=ef76b89369ed75505fa4bb3a995f48a0`
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=ef76b89369ed75505fa4bb3a995f48a0&units=metric`
         loader.style.display = 'block'
         fetch(url)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const displayWeather = (data) => {
     const div = document.createElement('div')
     div.innerHTML = `
         <div class="weather-status text-white text-center">
-            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
             <h1>${data.name}</h1>
             <h3><span>${data.main.temp}</span>&deg;C</h3>
             <h1 class="lead">${data.weather[0].main}</h1>
